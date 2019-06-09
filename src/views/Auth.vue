@@ -1,14 +1,10 @@
 <template>
-  <v-container text-xs-center>
+  <v-container text-xs-center fill-height>
     <v-layout align-center justify-center row fill-height>
       <v-flex xs12 sm6 md4>
-        <img src="../assets/logo.png" alt="Logo" class="mb-2"/>
-        <p>
-          Vue Firebase by <a href="https://coelhodeveloper.com.br">Renan Coelho</a>
-        </p>
-        <p>
-          Anonymous Accounts by <a href="https://smyl.es">Myles McNamara</a>
-        </p>
+        <p class="font-weight-bold title">Gestion du quotidien étape par étape</p>
+        <p class="font-weight-bold display-3">TDAH</p>
+        <v-spacer></v-spacer>
         <router-view/>
       </v-flex>
     </v-layout>
@@ -17,6 +13,6 @@
 
 <script>
 export default {
-  name: 'auth'
-}
+  name: "auth"
+};
 </script>

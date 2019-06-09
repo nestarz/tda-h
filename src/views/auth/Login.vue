@@ -30,30 +30,27 @@
       label="Keep me logged in"
       v-model="form.remember"
       :error-messages="errors.collect('remember')"
-      color="primary"
       :disabled="submitting"
     />
 
     <v-btn
       type="submit"
-      class="mb-3"
-      color="primary"
+      class="mb-3 text-none"
       block
       large
       @click="submit()"
       :disabled="!isFormValid || submitting"
-    >LOGIN</v-btn>
+    >Login</v-btn>
     <v-btn
-      color="indigo"
-      class="mb-3"
+      class="mb-3 text-none"
       :dark="!submitting"
       block
       large
       :to="{ name: 'SignUp' }"
       :disabled="submitting"
-    >SIGN UP</v-btn>
-    <v-btn block large :to="{ name: 'PasswordRecovery' }" :disabled="submitting">PASSWORD RECOVERY</v-btn>
-    <v-btn block large color="primary" @click="signInAnon()">Sign in Anonymously</v-btn>
+    >Sign up</v-btn>
+    <v-btn block large class="text-none" :to="{ name: 'PasswordRecovery' }" :disabled="submitting">Recover Password</v-btn>
+    <v-btn block large class="text-none" @click="signInAnon()">Sign in Anonymously</v-btn>
   </v-form>
 </template>
 
