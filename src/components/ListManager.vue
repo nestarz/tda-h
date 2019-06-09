@@ -3,7 +3,7 @@
     <v-flex text-xs-center class="container-a">
       <!-- header -->
       <!-- main -->
-      <v-card class="mt-3">
+      <v-card class="mt-3" flat :elevation="0">
         <v-progress-linear class="my-0" v-model="progressPercentage"/>
         <v-card-actions class="px-3" v-show="todos.length">
           <span class="primary--text">{{ remaining }} {{ remaining | pluralize('item') }} left</span>
@@ -31,7 +31,7 @@
               @delete="deleteItem"
             />
           </template>
-          <v-card>
+          <v-card flat>
             <v-list class="pa-0">
               <v-list-tile>
                 <!--                 <v-list-tile-action>

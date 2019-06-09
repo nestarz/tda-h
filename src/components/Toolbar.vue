@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar fixed app :class="{ 'has-alert': !isOnline }">
+    <v-toolbar flat fixed app :class="{ 'has-alert': !isOnline }">
       <v-toolbar-side-icon @click.stop="$emit('toggle')"></v-toolbar-side-icon>
       <v-toolbar-title>
         {{ $route.meta.title }}
