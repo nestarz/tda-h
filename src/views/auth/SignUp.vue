@@ -138,14 +138,15 @@ export default {
               $uid: String
               $displayName: String
               $anonUID: String
-              $wasAnonAccount: Boolean
+              $wasAnonAccount: Boolean = false
               $randomAnonOnlyData: String
             ) {
-              update_users(
-                where: { uid: { _eq: $uid }, wasAnonAccount: { _eq: true } }
-                _set: {
+              insert_users(
+                # where: { uid: { _eq: $uid }, wasAnonAccount: { _eq: true } }
+                objects: {
                   displayName: $displayName
                   anonUID: $anonUID
+                  uid: $uid
                   wasAnonAccount: $wasAnonAccount
                   randomAnonOnlyData: $randomAnonOnlyData
                 }

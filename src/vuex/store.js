@@ -115,6 +115,7 @@ const actions = {
       },
     });
 
+    console.log(res.data, userId);
     commit('SET_USER_PROFILE', res.data.users[0]);
   },
 };

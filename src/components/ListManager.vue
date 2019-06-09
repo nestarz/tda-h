@@ -34,7 +34,7 @@
           <v-card>
             <v-list class="pa-0">
               <v-list-tile>
-<!--                 <v-list-tile-action>
+                <!--                 <v-list-tile-action>
                   <v-checkbox
                     :input-value="allChecked"
                     @change="toggleAll(!allChecked)"
@@ -42,7 +42,7 @@
                     v-if="todos.length > 0"
                   ></v-checkbox>
                   <v-icon color="primary" v-else>check</v-icon>
-                </v-list-tile-action> -->
+                </v-list-tile-action>-->
                 <v-text-field
                   :label="'New todo input'"
                   @keydown.enter="addItem"
@@ -144,7 +144,7 @@ export default {
       variables() {
         return {
           userId: this.currentUser.uid,
-          parentId: this.parent || ""
+          parentId: this.parent || null
         };
       },
       skip() {
@@ -200,7 +200,7 @@ export default {
               query: GET_TODOS,
               variables: {
                 userId: this.currentUser.uid,
-                parentId: this.parent || ""
+                parentId: this.parent || null
               }
             });
             todos.push(insert_todos.returning[0]);
@@ -209,7 +209,7 @@ export default {
               data: { todos },
               variables: {
                 userId: this.currentUser.uid,
-                parentId: this.parent || ""
+                parentId: this.parent || null
               }
             });
           }
@@ -239,7 +239,7 @@ export default {
               query: GET_TODOS,
               variables: {
                 userId: this.currentUser.uid,
-                parentId: this.parent || ""
+                parentId: this.parent || null
               }
             });
             const deleteIndexes = [];
@@ -256,7 +256,7 @@ export default {
               query: GET_TODOS,
               variables: {
                 userId: this.currentUser.uid,
-                parentId: this.parent || ""
+                parentId: this.parent || null
               },
               data: {
                 todos: todos.filter(
@@ -310,14 +310,14 @@ export default {
               query: GET_TODOS,
               variables: {
                 userId: this.currentUser.uid,
-                parentId: this.parent || ""
+                parentId: this.parent || null
               }
             });
             cache.writeQuery({
               query: GET_TODOS,
               variables: {
                 userId: this.currentUser.uid,
-                parentId: this.parent || ""
+                parentId: this.parent || null
               },
               data: {
                 todos: todos.map((todo, index) =>
