@@ -9,19 +9,21 @@
       v-validate="'required|email'"
       :error-messages="errors.collect('email')"
       solo
+      flat
       :disabled="submitting"/>
 
     <v-btn
       type="submit"
-      color="primary"
       block
       large
+      depressed
       class="mb-3"
       @click="submit()"
       :disabled="!isFormValid || submitting">SEND PASSWORD RESET LINK</v-btn>
     <v-btn
       block
       large
+      depressed
       :to="{ name: 'Login' }"
       :disabled="submitting">BACK</v-btn>
   </v-form>

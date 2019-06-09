@@ -10,6 +10,7 @@
       :error-messages="errors.collect('email')"
       solo
       :disabled="submitting"
+      flat
     />
     <v-text-field
       type="password"
@@ -21,6 +22,7 @@
       :error-messages="errors.collect('password')"
       solo
       :disabled="submitting"
+      flat
     />
     <v-checkbox
       type="checkbox"
@@ -38,19 +40,21 @@
       class="mb-3 text-none"
       block
       large
+      depressed
       @click="submit()"
       :disabled="!isFormValid || submitting"
     >Login</v-btn>
     <v-btn
       class="mb-3 text-none"
-      :dark="!submitting"
       block
       large
+      :dark="!submitting"
       :to="{ name: 'SignUp' }"
       :disabled="submitting"
+      depressed
     >Sign up</v-btn>
-    <v-btn block large class="text-none" :to="{ name: 'PasswordRecovery' }" :disabled="submitting">Recover Password</v-btn>
-    <v-btn block large class="text-none" @click="signInAnon()">Sign in Anonymously</v-btn>
+    <v-btn block depressed large class="text-none" :to="{ name: 'PasswordRecovery' }" :disabled="submitting">Recover Password</v-btn>
+    <v-btn block depressed large class="text-none" @click="signInAnon()">Sign in Anonymously</v-btn>
   </v-form>
 </template>
 

@@ -2,8 +2,10 @@
   <v-container text-xs-center fill-height>
     <v-layout align-center justify-center row fill-height>
       <v-flex xs12 sm6 md4>
-        <p class="font-weight-bold title">Gestion du quotidien étape par étape</p>
-        <p class="font-weight-bold display-3">TDAH</p>
+        <p class="font-weight-bold display-3">
+          TDA
+          <span class="font-weight-light display-4">/</span>H
+        </p>
         <v-spacer></v-spacer>
         <router-view/>
       </v-flex>

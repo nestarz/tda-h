@@ -10,6 +10,7 @@
       v-model="form.name"
       solo
       :disabled="submitting"
+      flat
     />
     <v-text-field
       type="email"
@@ -21,6 +22,7 @@
       v-model="form.email"
       solo
       :disabled="submitting"
+      flat
     />
     <v-text-field
       type="password"
@@ -32,6 +34,7 @@
       v-model="form.password"
       solo
       :disabled="submitting"
+      flat
     />
     <v-text-field
       type="password"
@@ -44,6 +47,7 @@
       ref="password_confirmation"
       solo
       :disabled="submitting"
+      flat
     />
 
     <v-btn
@@ -55,6 +59,7 @@
       class="mb-3"
       @click="submit()"
       :disabled="!isFormValid || submitting"
+      depressed
     >Create New Account</v-btn>
     <v-btn
       v-else
@@ -65,14 +70,15 @@
       class="mb-3"
       @click="submit()"
       :disabled="!isFormValid || submitting"
+      depressed
     >Convert Anonymous Account</v-btn>
     <v-btn
       :to="{ name: 'Login' }"
-      color="indigo"
       :dark="!submitting"
       block
       large
       :disabled="submitting"
+      depressed
     >ALREADY HAVE AN ACCOUNT?</v-btn>
   </v-form>
 </template>
