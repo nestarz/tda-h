@@ -23,6 +23,7 @@ export default {
 .custom-font {
   font-family: CircularStd !important;
   letter-spacing: -1px !important;
+  user-select: none;
 
   span {
     margin: 0 -7px !important;

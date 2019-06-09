@@ -8,19 +8,16 @@ import projects from './projects';
 
 Vue.use(Router);
 
-const routes = [
-  ...web,
-  ...auth,
-  ...account,
-  ...projects,
-];
+const routes = [...web, ...auth, ...account, ...projects];
 
 const router = new Router({ routes });
 
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
   const requiresGuest = to.matched.some(record => record.meta.requiresGuest);
-  const anonSignUp = to.matched.some(record => record.name === 'SignUp') && store.state.currentUser && store.state.currentUser.isAnonymous;
+  const anonSignUp = to.matched.some(record => record.name === 'SignUp')
+    && store.state.currentUser
+    && store.state.currentUser.isAnonymous;
 
   // console.log( to )
   // console.log( from )
