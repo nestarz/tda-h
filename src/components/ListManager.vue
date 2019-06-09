@@ -4,14 +4,14 @@
       <!-- header -->
       <!-- main -->
       <v-card class="mt-3" flat :elevation="0">
-        <v-progress-linear class="my-0" v-model="progressPercentage"/>
+        <v-progress-linear class="my-0" v-model="progressPercentage" v-if="progressPercentage"/>
         <v-card-actions class="px-3" v-show="todos.length">
           <span class="primary--text">{{ remaining }} {{ remaining | pluralize('item') }} left</span>
           <v-spacer></v-spacer>
           <v-btn-toggle class="elevation-0" mandatory v-model="visibility" v-show="todos.length">
             <v-btn
               :key="key"
-              :to="key"
+              @click="visibility = key"
               :value="key"
               class="mx-0"
               color="primary"
@@ -66,9 +66,7 @@
         @click="clearCompleted"
         block
         class="mt-3"
-        color="primary"
         depressed
-        round
         v-show="todos.length > remaining"
       >Clear completed</v-btn>
     </v-flex>
@@ -214,7 +212,8 @@ export default {
             });
           }
         })
-        .catch(error => console.error(error));
+        .catch(error => console.error(error))
+        .then(() => this.newItem = null);
     },
     deleteItem(id) {
       this.$apollo

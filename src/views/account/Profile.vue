@@ -7,7 +7,7 @@
       <p v-else>
         You're signed in under an Anonymous Account!
       </p>
-      <v-card v-if="userProfile">
+      <v-card v-if="userProfile" flat>
         <v-card-title><h4>User Profile</h4></v-card-title>
         <v-divider></v-divider>
         <v-list dense>
@@ -33,7 +33,7 @@
           </v-list-tile>
         </v-list>
       </v-card>
-      <v-card v-if="currentUser">
+      <v-card v-if="currentUser" flat>
         <v-card-title><h4>Current User</h4></v-card-title>
         <v-divider></v-divider>
         <v-list dense>
