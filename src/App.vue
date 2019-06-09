@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="custom-font">
     <v-content :class="{ 'has-alert': !isOnline }">
       <v-alert :value="!isOnline" type="warning" transition="slide-y-transition" class="alert">
         You are offline. Trying to reconnect...
@@ -27,6 +27,10 @@ export default {
 </script>
 
 <style scoped>
+.custom-font {
+  font-family: CircularStd, Helvetica, Arial, sans-serif;
+}
+
 .alert {
   position: fixed;
   left: 0;
