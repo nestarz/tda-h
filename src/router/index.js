@@ -47,7 +47,7 @@ router.beforeEach((to, from, next) => {
     store.dispatch('ROUTE_COMPLETE');
   });
 
-  document.title = `${to.meta.title} - Vue Firebase Anon Accounts`;
+  document.title = `${to.meta.title} - tda/h`;
 });
 
 export default router;
